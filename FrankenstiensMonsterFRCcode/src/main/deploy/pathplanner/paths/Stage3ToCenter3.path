@@ -1,0 +1,65 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.4694120229027585,
+        "y": 4.317590602980848
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.3239288017037583,
+        "y": 5.007817672164862
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.6015831638103353,
+        "y": 5.580559282764361
+      },
+      "prevControl": {
+        "x": 1.6015831638103353,
+        "y": 5.580559282764361
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [
+    {
+      "fieldPosition": {
+        "x": 0.4,
+        "y": 5.5
+      },
+      "rotationOffset": 0.0,
+      "minWaypointRelativePos": 0.0,
+      "maxWaypointRelativePos": 0.8949152542372862,
+      "name": "Point Towards Zone"
+    }
+  ],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 5.5,
+    "maxAcceleration": 3.5,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 179.3562542858246
+  },
+  "reversed": false,
+  "folder": "Simple5Piece",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 148.59739076026645
+  },
+  "useDefaultConstraints": true
+}
