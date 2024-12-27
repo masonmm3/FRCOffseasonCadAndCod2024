@@ -11,7 +11,7 @@ Overall happy with that and loved that. I also attempted to approach and elevato
 The folder Robot_FrankenstiensMonster is the advantage scope model. The elevator component has not been setup. The name is a callback to the inseason Robot I competed with on 6366 being Frankenstien.
 
 ### Moving to Code
-* this is when I get into my comfort zone. The team I am mentoring next year meant I needed to learn some new libraries.
+* this is when I get into my comfort zone. The team I am mentoring in 2025 used a different swerve library meaning I needed to learn some new libraries.
 * The libraries in use in this code are YAGSL, MAPLESIM, AKIT, PHOTONVISION, REVLIB, PATHPLANNER. I am familiar with all but one of these but had some more to learn.
 * YAGSL was the new one so I spent a lot of time on that.
 * I had previously used it in the 23 offseason when learning swerve for the first time and had a miserable experience in an offseason as a result of just wierd things YAGSL would do. I swaped to the 23 akit advanced swerve template for 24 changing and improving it for use with the ctre ecosystem once we made the switch about week 3 of build.
