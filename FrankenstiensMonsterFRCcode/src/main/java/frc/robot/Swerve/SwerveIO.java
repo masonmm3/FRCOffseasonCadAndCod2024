@@ -93,6 +93,8 @@ public interface SwerveIO {
 
     public default void zeroGyro() {}
 
+    public default void moduleLock() {}
+
     public default boolean isRedAlliance() {
         return false;
     }
@@ -113,7 +115,7 @@ public interface SwerveIO {
         return null;
     }
 
-    public default SwerveModuleState[] getSetpoint(ChassisSpeeds speeds) {
+    public default SwerveModuleState[] getSetpoint() {
         return null;
     }
 

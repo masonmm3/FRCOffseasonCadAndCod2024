@@ -31,7 +31,7 @@ import swervelib.telemetry.SwerveDriveTelemetry.TelemetryVerbosity;
 /** Add your docs here. */
 public class SwerveHardware implements SwerveIO{
     private double _maximumSpeed = Units.feetToMeters(20.1);
-    private File _swerveJsonDirectory = new File(Filesystem.getDeployDirectory(), "swerve");;
+    private File _swerveJsonDirectory = new File(Filesystem.getDeployDirectory(), "swerve");
     private SwerveDrive _swerveDrive;
     private SwerveModule[] _modules;  
     private SwerveMotor _lfDriveMotor;
@@ -123,6 +123,10 @@ public class SwerveHardware implements SwerveIO{
         _swerveDrive.setMotorIdleMode(enabled);
     }
 
+
+    public void moduleLock() {
+        _swerveDrive.lockPose();
+    }
     
 
     @Override
@@ -147,7 +151,7 @@ public class SwerveHardware implements SwerveIO{
     @Override
     public void zeroGyroWithAlliance()
     {
-      if (isRedAlliance())
+      if (!isRedAlliance())
       {
         zeroGyro();
         //Set the pose 180 degrees
@@ -226,11 +230,6 @@ public class SwerveHardware implements SwerveIO{
     @Override
     public SwerveModuleState[] getModuleState() {
         return _swerveDrive.getStates();
-    }
-
-    @Override
-    public SwerveModuleState[] getSetpoint(ChassisSpeeds speeds) {
-        return _swerveDrive.toServeModuleStates(speeds, true);
     }
 
     @Override

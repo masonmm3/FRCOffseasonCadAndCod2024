@@ -24,7 +24,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Transform2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
-import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.math.trajectory.Trajectory;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -39,6 +39,8 @@ public class Swerve {
     private Vision _vision;
     private PIDController pidController = new PIDController(8.0, 0, 0.0);
     private boolean notAiming;
+
+    private Trajectory trajectory;
 
     public Swerve(SwerveIO io) {
         this.io = io;
@@ -57,6 +59,8 @@ public class Swerve {
 
         io.updateOdometry();
 
+        io.getSwerve().postTrajectory(trajectory);
+
         _vision.updatePoseEstimation(io.getSwerve());
 
         Logger.processInputs("Swerve/MotorInfo", inputs);
@@ -69,9 +73,7 @@ public class Swerve {
 
         Logger.recordOutput( "Swerve Drive/States", io.getModuleState());
 
-        if (DriverStation.isDisabled()) {
-            Logger.recordOutput("Swerve Drive/setpoints", new SwerveModuleState[] {});
-        }
+        Logger.recordOutput("Swerve Drive/Trajectory", trajectory);
     }
 
     public void fieldRelativeTeleop(double LeftX, double LeftY, double RightX, double steerSens) {
@@ -79,11 +81,9 @@ public class Swerve {
         desiredSpeeds.omegaRadiansPerSecond = RightX * Math.PI * steerSens;
 
         io.driveFieldOriented(desiredSpeeds);
-
-        Logger.recordOutput("Swerve Drive/setpoints", io.getSetpoint(desiredSpeeds));
     }
 
-    public void fieldRelativeTeleopSmartAim(double LeftX, double LeftY, double RightX, double steerSens, boolean aimToPoint, boolean rotateToAngle, boolean assistive,  Pose2d aimPose, boolean slow) {
+    public void fieldRelativeTeleopSmartAim(double LeftX, double LeftY, double RightX, double steerSens, boolean aimToPoint, boolean rotateToAngle, boolean assistive,  Pose2d aimPose, boolean slow, boolean lockPose, boolean zeroGyro) {
         ChassisSpeeds desiredSpeeds = io.getTargetSpeeds(LeftY, LeftX, new Rotation2d(RightX * Math.PI));
 
         if (aimToPoint) {
@@ -107,9 +107,15 @@ public class Swerve {
             desiredSpeeds.omegaRadiansPerSecond *= 3;
         }
 
-        io.driveFieldOriented(desiredSpeeds);
+        if (lockPose) {
+            io.moduleLock();
+        } else {
+            io.driveFieldOriented(desiredSpeeds);
+        }
 
-        Logger.recordOutput("Swerve Drive/setpoints", io.getSetpoint(desiredSpeeds));
+        if (zeroGyro) {
+            io.zeroGyroWithAlliance();
+        }
     }
 
     public double SmartAimError() {

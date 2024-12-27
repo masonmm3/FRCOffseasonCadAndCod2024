@@ -221,9 +221,9 @@ public class Robot extends LoggedRobot {
       wasDriving = false;
     } else {
       if (isRed) {
-        RobotContainer.swerve.fieldRelativeTeleopSmartAim(driver.getLeftX(), driver.getLeftY(), driver.getRightX(), -2.5, aiming, rotate, assistive, aimPoint, aiming && !assistive);
+        RobotContainer.swerve.fieldRelativeTeleopSmartAim(driver.getLeftX(), driver.getLeftY(), driver.getRightX(), -2.5, aiming, rotate, assistive, aimPoint, aiming && !assistive, driver.getXButton(), driver.getBButton());
       } else {
-        RobotContainer.swerve.fieldRelativeTeleopSmartAim(-driver.getLeftX(), -driver.getLeftY(), driver.getRightX(), -2.5, aiming, rotate, assistive, aimPoint, aiming && !assistive);
+        RobotContainer.swerve.fieldRelativeTeleopSmartAim(-driver.getLeftX(), -driver.getLeftY(), driver.getRightX(), -2.5, aiming, rotate, assistive, aimPoint, aiming && !assistive, driver.getXButton(), driver.getBButton());
       }
       
     }
