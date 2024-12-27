@@ -27,5 +27,7 @@ The folder Robot_FrankenstiensMonster is the advantage scope model. The elevator
 
 Had a lot of fun working through this and hope those who come across this can learn from it. 
 
+[Video Showcase](https://youtu.be/myx9rAiUxsQ)
+
 
 
