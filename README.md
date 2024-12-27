@@ -23,7 +23,7 @@ The folder Robot_FrankenstiensMonster is the advantage scope model. The elevator
 * The shooter which is based around the MAPLESIM ecosystem has a few tricks. The game pieces are handled by the Indexer subsystem and uses a handoff and checkpoint system to improve simulation accuracy by requiring the game piece to move between points with a delay and storing a location for visualization of the gamepiece in the robot. The shooter is also setup for SWM however the field velocity has to be made negative on blue for somereason so there are still math errors. The code uses 4 interpolating double tree maps for aim point generation. speed and angle for both passing and shooting.
 * The code is missing some things I wish it wasnt such as and IO file for controllers and some redundant features on a second controller such as manual shooting setpoints, shoot overide for the autoshoot, and a way to disable the smart aim.
 * From an auto perspective the code is fully featured allowing for swm and stationary shooting using two scripts.
-* ALl code is abstracted using the Akit system and because of time real hardware was never coded so everything is currently sim only.
+* All code is abstracted using the Akit system and because of time real hardware was never coded so everything is currently sim only.
 
 Had a lot of fun working through this and hope those who come across this can learn from it. 
 
