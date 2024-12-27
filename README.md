@@ -1,4 +1,4 @@
-# FRCOffseasonCadAndCod2024
+# FRCOffseasonCadAndCode2024
 
 This is a project I did to learn some new things.
 
