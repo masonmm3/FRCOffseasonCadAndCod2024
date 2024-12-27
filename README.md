@@ -4,7 +4,7 @@ This is a project I did to learn some new things.
 
 ### Starting with the [CAD](https://cad.onshape.com/documents/7b13049c2cde382fdd62978c/w/b0b2d0bd70eaff5d44976ab3/e/618cb2263d489624640a6db2?renderMode=0&uiState=676de51d1038fe27e777eb76). 
 * This was my first time doing a mastersketch and using the derrived feature.
-Overall happy with that and loved that. I also attempted to approach and elevator and learned quite a bit from that. The elevator in the model needs redone along with most of the packaging. The packaging ended up worse than expected and the climber was scrapped because this and time as this project took a week. The elevator breaks frame perimeter and physics so it was ignored going forward. the robot also wound up 0.5" over frame perimeter limit. A lot of learning from this.
+Overall happy with that and loved that. I also attempted to approach and elevator and learned quite a bit from that. The elevator in the model needs redone along with most of the packaging. The packaging ended up worse than expected and the climber was scrapped because of this and time as this project took a week. The elevator breaks frame perimeter and physics so it was ignored going forward. the robot also wound up 0.5" over frame perimeter limit. A lot of learning from this.
 ![image](https://github.com/user-attachments/assets/f3a50dda-3c09-4e25-8a51-0d27c28d4258)
 
 
